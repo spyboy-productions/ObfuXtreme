@@ -29,9 +29,35 @@ Perfect for protecting sensitive algorithms, API keys, and proprietary business 
 
 ---
 
-## ⚙️ Installation
-
+## 📖 Installation
 ```bash
-git clone https://github.com/yourusername/ObfuXtreme.git
+git clone https://github.com/spyboy-productionse/ObfuXtreme.git
+```
+```
 cd ObfuXtreme
+```
+```
 pip install -r requirements.txt
+```
+```
+python ObfuXtreme.py <your_script.py>
+```
+## 🔥 Usage
+
+To obfuscate a Python script, run:
+
+Example:
+
+`python ObfuXtreme.py test.py`
+
+This will generate an obfuscated file named obfuscated.py that contains the encrypted and protected version of your script.
+
+🛠️ Running the Obfuscated Script
+
+Simply run:
+
+`python obfuscated.py`
+
+## ⚠️ Disclaimer
+
+This tool is for educational and ethical use only. The developer is not responsible for any misuse.
