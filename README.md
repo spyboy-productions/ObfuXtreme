@@ -35,20 +35,30 @@ Perfect for protecting sensitive algorithms, API keys, and proprietary business 
 
 ---
 
-## ✨ Features
+### ✨ Feature 
 
-- **Military-Grade Encryption**  
-  AES-256-CBC with per-build random keys
-- **AST-Level Transformations**  
-  Variable renaming, Control flow flattening, String encryption
-- **Anti-Analysis Protections**  
-  Debugger detection, Memory bombardment, Environment checks
-- **Self-Destruct Mechanism**  
-  Tamper detection with SHA-3 integrity checks
-- **Stealth Operation**  
-  Silent failure modes, Clean exception handling
-- **Cross-Platform**  
-  Works on Windows/Linux/macOS
+| Feature | Found? | Notes |
+|---------|--------|-------|
+| **Military-Grade Encryption** | ✅ | Uses **AES-256-CBC** for encryption. |
+| **AES-256-CBC with per-build random keys** | ✅ | Generates a new **32-byte key** (`self.aes_key = os.urandom(32)`) and **16-byte IV** (`self.iv = os.urandom(16)`) per build. |
+| **AST-Level Transformations** | ✅ | Implements **Variable Renaming, Control Flow Flattening, and String Encryption** using `ast.NodeTransformer`. |
+| **Variable Renaming** | ✅ | Uses a hashing method (`shake_128`) to obfuscate variable names. |
+| **Control Flow Flattening** | ✅ | Implements state-based execution in `ControlFlowFlattener`. |
+| **String Encryption** | ✅ | Encrypts string literals with AES before execution. |
+| **Anti-Analysis Protections** | ✅ | Includes **Debugger Detection, Memory Bombardment, and Environment Checks**. |
+| **Debugger Detection** | ✅ | `_anti_debug()` exits if a debugger is detected (`sys.gettrace()` or `IsDebuggerPresent`). |
+| **Memory Bombardment** | ❌ | No evidence of excessive memory usage or process exhaustion techniques. |
+| **Environment Checks** | ✅ | Uses OS-based debugger detection. |
+| **Self-Destruct Mechanism** | ✅ | Implements **Tamper detection with SHA-3 integrity checks** (used in `_decrypt_str` with exception handling). |
+| **Stealth Operation** | ✅ | Uses **silent failure modes** (returns empty string if decryption fails) and **exception handling**. |
+| **Cross-Platform** | ✅ | Designed for **Windows, Linux, and macOS** using standard Python and PyCryptodome. |
+
+### ❌ Missing or Partially Implemented Features:
+1. **Memory Bombardment** → No aggressive memory-based anti-debugging measures.
+2. **More Robust Self-Destruct** → While `_anti_debug()` exits on detection, a **secure self-erasing mechanism** isn't implemented.
+
+### ❓ Upcoming Feature:
+**memory bombardment** and a more **secure self-destruct mechanism** would enhance protection.
 
 ---
 
