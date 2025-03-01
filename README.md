@@ -65,6 +65,10 @@ pip install -r requirements.txt
 ```
 python ObfuXtreme.py <your_script.py>
 ```
+`To Run Light version With No External requirements:`
+```
+python light_ObfuXtreme.py <your_script.py>
+```
 ## 🔥 Usage
 
 To obfuscate a Python script, run:
