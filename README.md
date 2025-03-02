@@ -64,7 +64,7 @@ Perfect for protecting sensitive algorithms, API keys, and proprietary business 
 
 ## 📖 Installation
 ```bash
-git clone https://github.com/spyboy-productionse/ObfuXtreme.git
+git clone https://github.com/spyboy-productions/ObfuXtreme.git
 ```
 ```
 cd ObfuXtreme
