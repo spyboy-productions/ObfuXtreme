@@ -19,7 +19,7 @@
 </p>
 
 <p align="center">
-  <img width="20%" src="https://github.com/spyboy-productions/ObfuXtreme/blob/main/logo_ObfuXtreme.jpg" />
+  <img width="20%" src="https://github.com/spyboy-productions/ObfuXtreme/blob/main/Image/logo_ObfuXtreme.jpg" />
 </p>
 
 
