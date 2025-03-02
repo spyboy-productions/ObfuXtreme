@@ -62,6 +62,25 @@ Perfect for protecting sensitive algorithms, API keys, and proprietary business 
 
 ---
 
+> [!CAUTION] 
+> **Please use this responsibly and ethically.**
+> <h4> DISCLAIMER </h4> 
+> ObfuXtreme is a **Proof of Concept (PoC) tool** created **strictly for educational and research purposes**. It is designed to demonstrate advanced Python obfuscation techniques that can help protect legitimate intellectual property from reverse engineering.  
+While this tool showcases its effectiveness by being undetectable on VirusTotal, **it is NOT intended for malicious use**. Using ObfuXtreme to obfuscate malware, bypass security measures, or engage in any unethical activities is strictly prohibited.  
+
+#### **Responsibility & Ethics**  
+- Cybersecurity professionals and developers can use this tool to **understand, analyze, and defend against** similar obfuscation techniques used by attackers.  
+- The **developer does not condone** nor take responsibility for any misuse of this tool. Users are solely accountable for how they apply it.  
+- **Always comply with local laws and ethical guidelines** when using this tool.  
+
+By using ObfuXtreme, `you acknowledge that you understand these terms and accept full responsibility for your actions`.  
+
+## VirusTotal Scans
+
+<p align="center"> <strong>Without ObfuXtreme</strong><br> <img width="90%" src="https://github.com/spyboy-productions/ObfuXtreme/blob/main/Image/without_ObfuXtreme.png" alt="VirusTotal scan without ObfuXtreme" /> </p> 
+<p align="center"> <strong>With ObfuXtreme</strong><br> <img width="90%" src="https://github.com/spyboy-productions/ObfuXtreme/blob/main/Image/with_ObfuXtreme.png" alt="VirusTotal scan with ObfuXtreme" /> </p>
+
+
 ## 📖 Installation
 ```bash
 git clone https://github.com/spyboy-productions/ObfuXtreme.git
@@ -94,9 +113,5 @@ This will generate an obfuscated file named obfuscated.py that contains the encr
 Simply run:
 
 `python obfuscated.py`
-
-## ⚠️ Disclaimer
-
-This tool is for educational and ethical use only. The developer is not responsible for any misuse.
 
 <h4 align="center"> If you find this GitHub repo useful, please consider giving it a star! ⭐️ </h4> 
