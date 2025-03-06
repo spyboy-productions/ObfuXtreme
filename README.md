@@ -114,4 +114,9 @@ Simply run:
 
 `python obfuscated.py`
 
+### To do:
+1. add new module that Works only on the original machine.
+2. add new module that ask for password.
+3. add option to convert to .exe file after obfuscation.
+
 <h4 align="center"> If you find this GitHub repo useful, please consider giving it a star! ⭐️ </h4> 
