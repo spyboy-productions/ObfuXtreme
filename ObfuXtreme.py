@@ -21,18 +21,39 @@ class UltimateObfuscator:
         with open(self.filename, 'r', encoding='utf-8') as f:
             return f.read()
 
-    class VariableRenamer(ast.NodeTransformer):
+    class VariableCollector(ast.NodeVisitor):
         def __init__(self):
+            self.assigned_vars = set()
+
+        def visit_Name(self, node):
+            if isinstance(node.ctx, ast.Store):
+                self.assigned_vars.add(node.id)
+            self.generic_visit(node)
+
+        def visit_arg(self, node):
+            self.assigned_vars.add(node.arg)
+            self.generic_visit(node)
+
+    class VariableRenamer(ast.NodeTransformer):
+        def __init__(self, assigned_vars):
             self.var_map = {}
-            
+            self.assigned_vars = assigned_vars
+
         def _obf_name(self, original):
             return f"var_{hashlib.shake_128(original.encode()).hexdigest(8)}"
-            
+
         def visit_Name(self, node):
-            if isinstance(node.ctx, (ast.Store, ast.Load)) and node.id not in ['print']:
+            if node.id in self.assigned_vars:
                 if node.id not in self.var_map:
                     self.var_map[node.id] = self._obf_name(node.id)
                 node.id = self.var_map[node.id]
+            return node
+
+        def visit_arg(self, node):
+            if node.arg in self.assigned_vars:
+                if node.arg not in self.var_map:
+                    self.var_map[node.arg] = self._obf_name(node.arg)
+                node.arg = self.var_map[node.arg]
             return node
 
     class ControlFlowFlattener(ast.NodeTransformer):
@@ -106,8 +127,13 @@ class UltimateObfuscator:
     def _transform_ast(self):
         tree = ast.parse(self.code)
         
+        # Collect variables to rename
+        collector = self.VariableCollector()
+        collector.visit(tree)
+        assigned_vars = collector.assigned_vars
+        
         transformers = [
-            self.VariableRenamer(),
+            self.VariableRenamer(assigned_vars),
             self.ControlFlowFlattener(),
             self.StringEncryptor(self),
         ]
@@ -147,9 +173,7 @@ def _decrypt_str(data):
 
 def _main():
     try:
-        #print("Initializing...")
         _encrypted = {encrypted_data!r}
-        #print("Decrypting payload...")
         
         # Decryption steps
         cipher = AES.new(_KEY, AES.MODE_CBC, _IV)
@@ -157,13 +181,11 @@ def _main():
         decrypted_data = unpad(cipher.decrypt(encrypted_data), 16)
         decompressed_data = zlib.decompress(decrypted_data)
         
-        #print("Executing payload...")
-        # Pass all needed functions to the execution context
         exec(marshal.loads(decompressed_data), {{
-            **globals(),  # Include current global functions
+            **globals(),
             '__name__': '__main__',
             '__builtins__': __builtins__,
-            '_decrypt_str': _decrypt_str  # Explicitly pass the decryption function
+            '_decrypt_str': _decrypt_str
         }})
     except Exception as e:
         print("Execution failed:")
