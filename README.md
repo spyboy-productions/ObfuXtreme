@@ -23,15 +23,13 @@
 </p>
 
 
-ObfuXtreme is a cutting-edge Python obfuscation tool designed to protect intellectual property by making reverse engineering extremely difficult. It combines multiple layers of security:
+ObfuXtreme is an advanced Python obfuscation tool designed to bypass antivirus detection and remain undetectable on VirusTotal.
 
 - **AES-256 Encryption** with CBC mode
 - **Abstract Syntax Tree (AST)** manipulation
 - **Anti-Debugging** techniques
 - **Polymorphic Code Generation**
 - **Zlib Compression** + **Marshal Serialization**
-
-Perfect for protecting sensitive algorithms, API keys, and proprietary business logic.
 
 ---
 
