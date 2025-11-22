@@ -23,17 +23,27 @@
 </p>
 
 
-ObfuXtreme is a cutting-edge Python obfuscation tool designed to protect intellectual property by making reverse engineering extremely difficult. It combines multiple layers of security:
+ObfuXtreme is an advanced Python obfuscation tool designed to bypass antivirus detection and remain undetectable on VirusTotal.
 
 - **AES-256 Encryption** with CBC mode
 - **Abstract Syntax Tree (AST)** manipulation
-- **Anti-Debugging** techniques
 - **Polymorphic Code Generation**
 - **Zlib Compression** + **Marshal Serialization**
 
-Perfect for protecting sensitive algorithms, API keys, and proprietary business logic.
-
 ---
+
+> [!CAUTION] 
+> **Please use this responsibly and ethically.**
+> <h4> DISCLAIMER </h4> 
+> ObfuXtreme is a Proof of Concept (PoC) Tool created strictly for educational and research purposes. It is designed to demonstrate advanced Python obfuscation techniques.  
+While this tool showcases its effectiveness by being undetectable on VirusTotal, it is NOT intended for malicious use. Using ObfuXtreme to obfuscate malware, bypass security measures, or engage in any unethical activities is strictly prohibited.  
+
+#### **Responsibility & Ethics**  
+- Cybersecurity professionals and developers can use this tool to **understand, analyze, and defend against** similar obfuscation techniques used by attackers.  
+- The **developer does not condone** nor take responsibility for any misuse of this tool. Users are solely accountable for how they apply it.  
+- **Always comply with local laws and ethical guidelines** when using this tool.  
+
+By using ObfuXtreme, `you acknowledge that you understand these terms and accept full responsibility for your actions`.  
 
 ### ✨ Feature 
 
@@ -53,27 +63,7 @@ Perfect for protecting sensitive algorithms, API keys, and proprietary business 
 | **Stealth Operation** | ✅ | Uses **silent failure modes** (returns empty string if decryption fails) and **exception handling**. |
 | **Cross-Platform** | ✅ | Designed for **Windows, Linux, and macOS** using standard Python and PyCryptodome. |
 
-### ❌ Missing or Partially Implemented Features:
-1. **Memory Bombardment** → No aggressive memory-based anti-debugging measures.
-2. **More Robust Self-Destruct** → While `_anti_debug()` exits on detection, a **secure self-erasing mechanism** isn't implemented.
-
-### ❓ Upcoming Feature:
-**memory bombardment** and a more **secure self-destruct mechanism** would enhance protection.
-
 ---
-
-> [!CAUTION] 
-> **Please use this responsibly and ethically.**
-> <h4> DISCLAIMER </h4> 
-> ObfuXtreme is a **Proof of Concept (PoC) tool** created **strictly for educational and research purposes**. It is designed to demonstrate advanced Python obfuscation techniques that can help protect legitimate intellectual property from reverse engineering.  
-While this tool showcases its effectiveness by being undetectable on VirusTotal, **it is NOT intended for malicious use**. Using ObfuXtreme to obfuscate malware, bypass security measures, or engage in any unethical activities is strictly prohibited.  
-
-#### **Responsibility & Ethics**  
-- Cybersecurity professionals and developers can use this tool to **understand, analyze, and defend against** similar obfuscation techniques used by attackers.  
-- The **developer does not condone** nor take responsibility for any misuse of this tool. Users are solely accountable for how they apply it.  
-- **Always comply with local laws and ethical guidelines** when using this tool.  
-
-By using ObfuXtreme, `you acknowledge that you understand these terms and accept full responsibility for your actions`.  
 
 ## VirusTotal Scans
 
