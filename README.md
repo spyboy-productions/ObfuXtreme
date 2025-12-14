@@ -21,7 +21,7 @@
   <img width="20%" src="https://github.com/spyboy-productions/ObfuXtreme/blob/main/Image/logo_ObfuXtreme.jpg" />
 </p>
 
-# ⚡ ObfuXtreme v3 — Advanced Python Obfuscation Engine
+### ⚡ ObfuXtreme — Advanced Python Obfuscation Engine
 
 ObfuXtreme is an advanced Python obfuscation tool designed to bypass antivirus detection and remain undetectable on VirusTotal.
 
@@ -35,7 +35,7 @@ ObfuXtreme is an advanced Python obfuscation tool designed to bypass antivirus d
 
 ---
 
-# ⚠️ Disclaimer & Ethics
+### ⚠️ Disclaimer & Ethics
 
 > [!CAUTION]
 > **Use responsibly and ethically.**
@@ -53,7 +53,7 @@ By using ObfuXtreme, **you accept full responsibility** for your actions and agr
 
 ---
 
-# ✨ ObfuXtreme v3 – Major Features
+### ✨ ObfuXtreme v3 – Major Features
 
 | Feature                           | Status | Notes                                                                                |
 | --------------------------------- | ------ | ------------------------------------------------------------------------------------ |
@@ -72,7 +72,7 @@ By using ObfuXtreme, **you accept full responsibility** for your actions and agr
 
 ---
 
-# 🔥 What’s NEW in v3?
+### 🔥 What’s NEW in v3?
 
 ### 🆕 Safe, stable, real-world obfuscation
 
@@ -107,7 +107,7 @@ Every build uses unique random identifiers.
 
 ---
 
-# 🧪 VirusTotal Demonstration (Educational)
+### 🧪 VirusTotal Demonstration (Educational)
 
 <p align="center"> <strong>Without ObfuXtreme</strong><br> <img width="90%" src="https://github.com/spyboy-productions/ObfuXtreme/blob/main/Image/without_ObfuXtreme.png" /> </p> 
 <p align="center"> <strong>With ObfuXtreme</strong><br> <img width="90%" src="https://github.com/spyboy-productions/ObfuXtreme/blob/main/Image/with_ObfuXtreme.png" /> </p>
@@ -116,7 +116,7 @@ These results highlight the effectiveness of structural obfuscation for **resear
 
 ---
 
-# 📦 Installation
+### 📦 Installation
 
 ```bash
 git clone https://github.com/spyboy-productions/ObfuXtreme.git
@@ -126,7 +126,7 @@ pip install -r requirements.txt
 
 ---
 
-# 🚀 Usage
+### 🚀 Usage
 
 ### Obfuscate a script:
 
@@ -160,7 +160,7 @@ python light_ObfuXtreme.py your_script.py
 
 ---
 
-# 🛠️ Development Roadmap
+### 🛠️ Development Roadmap
 
 * [ ] Machine-bound execution module (“run only on this PC”)
 * [ ] Obfuscated password-protected decryption
