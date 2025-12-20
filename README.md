@@ -160,6 +160,20 @@ python light_ObfuXtreme.py your_script.py
 
 ---
 
+### ⚙️ Need .exe File ?
+
+Just use this command after Obfuscation, it will compile it to .exe file.
+
+first install:
+```
+pip install pyinstaller
+```
+then use this command:
+```
+pyinstaller --onefile --noconsole obfuscated.py
+```
+Optional: If you're making a simple tool, PyInstaller is fine. If you need actual security, Cython + obfuscation is a practical approach. Going beyond that (VMProtect, Themida) is only worth it for high-risk software. 
+
 ### 🛠️ Development Roadmap
 
 * [ ] Machine-bound execution module (“run only on this PC”)
