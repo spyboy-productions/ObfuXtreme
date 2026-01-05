@@ -1,4 +1,4 @@
-<h4 align="center"> If you find this GitHub repo useful, please consider giving it a star! ⭐️ </h4> 
+<h4 align="center"> If you find this GitHub repo useful, please consider giving it a star! ⭐ </h4> 
 <p align="center">
     <a href="https://spyboy.in/twitter">
       <img src="https://img.shields.io/badge/-TWITTER-black?logo=twitter&style=for-the-badge">
@@ -21,102 +21,96 @@
   <img width="20%" src="https://github.com/spyboy-productions/ObfuXtreme/blob/main/Image/logo_ObfuXtreme.jpg" />
 </p>
 
-### ⚡ ObfuXtreme — Advanced Python Obfuscation Engine
+---
 
-ObfuXtreme is an advanced Python obfuscation tool designed to bypass antivirus detection and remain undetectable on VirusTotal.
+## ⚡ ObfuXtreme — Advanced Python Obfuscation Engine
 
-✔ Produces highly obfuscated Python code
+**ObfuXtreme** is an advanced Python obfuscation engine focused on **structural obfuscation**, **AST-level transformations**, and **runtime payload protection**.
 
-✔ Evades static detection
+It is designed for **security research**, **defensive analysis**, and **reverse-engineering studies** — not for malicious use.
 
-✔ Built using safe AST transformations
-
-✔ Ideal for security research, analysis, reverse-engineering studies
+✔ Produces heavily obfuscated Python code  
+✔ Breaks static analysis and signature-based detection  
+✔ Uses safe AST transformations (no bytecode patching)  
+✔ Runtime loader with encrypted payload execution  
 
 ---
 
-### ⚠️ Disclaimer & Ethics
+## ⚠️ Disclaimer & Ethics
 
-> [!CAUTION]
 > **Use responsibly and ethically.**
-> ObfuXtreme is a Proof-of-Concept (PoC) tool created strictly for education, research, and defensive cybersecurity purposes.
 
-### **You must NOT use this for:**
+ObfuXtreme is a **Proof-of-Concept (PoC)** project intended strictly for:
+- education
+- research
+- defensive cybersecurity testing
 
-* Obfuscating malware
-* Bypassing security products
-* Evading detection for malicious purposes
-* Any illegal or unethical activity
+### ❌ You must NOT use this tool for:
+- malware obfuscation
+- bypassing security products
+- evading detection for malicious purposes
+- any illegal or unethical activity
 
-The developers take **no responsibility** for misuse.
-By using ObfuXtreme, **you accept full responsibility** for your actions and agree to comply with all applicable laws.
-
----
-
-### ✨ ObfuXtreme v3 – Major Features
-
-| Feature                           | Status | Notes                                                                                |
-| --------------------------------- | ------ | ------------------------------------------------------------------------------------ |
-| **AES-256-CBC Encryption**        | ✅      | Encrypts strings + bytes using per-build random key and IV                           |
-| **Key Splitting (XOR)**           | ✅      | Keys are split into multiple XOR parts to avoid static extraction                    |
-| **AST-Level Obfuscation**         | ✅      | Safe transformations using Python `ast` module                                       |
-| **Variable Renaming**             | ✅      | Renames *locals only* to avoid breaking keyword arguments                            |
-| **Safe Control Flow Flattening**  | ✅      | Only flattens simple functions (no return, break, continue, with, try, yield, async) |
-| **Opaque Predicates**             | ✅      | Inserts junk conditional blocks to disrupt static analysis                           |
-| **String & Bytes Encryption**     | ✅      | All string and bytes literals are AES-encrypted                                      |
-| **Per-Build Random Polymorphism** | ✅      | Different output every time                                                          |
-| **Anti-Debugging**                | ✅      | Detects sys.gettrace() & Windows debugger                                            |
-| **Cross-Platform**                | ✅      | Works on Windows, Linux, macOS                                                       |
-| **Silent Failure Handling**       | ✅      | Decrypt functions fail silently to avoid leaking details                             |
-| **VT Friendly (Research Only!)**  | ⚠️     | Obfuscated scripts are harder for static AV engines to classify                      |
+The authors take **no responsibility for misuse**.  
+By using this project, **you accept full responsibility** for how it is used.
 
 ---
 
-### 🔥 What’s NEW in v3?
+## ✨ ObfuXtreme v4 — Key Features
 
-### 🆕 Safe, stable, real-world obfuscation
+| Feature | Status | Notes |
+|------|------|------|
+| **AES-256-CBC Encryption** | ✅ | Encrypts payload, strings, and bytes |
+| **Per-String Random IV** | ✅ | Prevents frequency & pattern analysis |
+| **XOR-Split Key Storage** | ✅ | AES key and IV split into multiple XOR parts |
+| **AST-Level Obfuscation** | ✅ | Safe transformations using Python `ast` |
+| **Local Variable Renaming** | ✅ | Arguments, globals, nonlocals preserved |
+| **Safe Control-Flow Flattening** | ✅ | Only applied to simple, linear functions |
+| **Encrypted Runtime Loader** | ✅ | Payload decrypted & executed at runtime |
+| **Auto-Rebuild per Python Version** | ✅ | Build version enforced at runtime |
+| **Cross-Platform** | ✅ | Windows, Linux, macOS |
+| **Clean Failure Handling** | ✅ | Clear errors instead of crashes |
+| **VT-Friendly (Research)** | ⚠️ | Structural obfuscation only |
 
-* No more broken functions
-* No more argument name renaming (fixes keyword calls)
-* No more `UnboundLocalError`
-* Handles *complex codebases* reliably
+---
 
-### 🆕 New Control Flow Flattener (Safe Mode)
+## 🔁 Auto-Rebuild (Important)
 
-* Flattens only pure sequential functions
-* Skips anything that may break semantic behavior
-* Auto-initializes real locals
-* Never touches arguments (`self`, `request`, etc.)
+ObfuXtreme **automatically locks the output to the Python version used during obfuscation**.
 
-### 🆕 XOR Split AES Key & IV
+Example:
+```text
+Build with Python 3.12 → output runs only on Python 3.12
+````
 
+This is intentional and prevents:
+
+* marshal incompatibility
+* silent crashes
+* undefined behavior
+
+If you change Python versions, **rebuild the script**.
+
+---
+
+## 📦 Dependencies
+
+### Required
+
+* Python **3.10+**
+* **pycryptodome**
+
+Install dependency:
+
+```bash
+pip install pycryptodome
 ```
-_KEY_PARTS = [random1, random2, final_xor]
-_KEY = XOR(all_parts)
-```
 
-Makes static extraction significantly harder.
-
-### 🆕 Encrypted Bytes + Strings
-
-String & bytes constants both get AES-encrypted.
-
-### 🆕 Randomized Loader & Function Names
-
-Every build uses unique random identifiers.
+> The obfuscated output also requires `pycryptodome` unless packaged with PyInstaller.
 
 ---
 
-### 🧪 VirusTotal Demonstration (Educational)
-
-<p align="center"> <strong>Without ObfuXtreme</strong><br> <img width="90%" src="https://github.com/spyboy-productions/ObfuXtreme/blob/main/Image/without_ObfuXtreme.png" /> </p> 
-<p align="center"> <strong>With ObfuXtreme</strong><br> <img width="90%" src="https://github.com/spyboy-productions/ObfuXtreme/blob/main/Image/with_ObfuXtreme.png" /> </p>
-
-These results highlight the effectiveness of structural obfuscation for **research and analysis**, NOT for malicious intent.
-
----
-
-### 📦 Installation
+## 🚀 Installation
 
 ```bash
 git clone https://github.com/spyboy-productions/ObfuXtreme.git
@@ -126,62 +120,76 @@ pip install -r requirements.txt
 
 ---
 
-### 🚀 Usage
+## 🧪 Usage
 
-### Obfuscate a script:
+### Obfuscate a script
 
 ```bash
 python ObfuXtreme.py your_script.py
 ```
-OR
-```
+
+or
+
+```bash
 python ObfuXtreme.py your_script.py obfuscated.py
 ```
 
-### Output:
+### Output
 
-A file named:
-
-```
+```text
 obfuscated.py
 ```
 
-### Run the obfuscated script:
+### Run obfuscated file
 
 ```bash
 python obfuscated.py
 ```
 
-### Light Version (No External Libraries)
+---
+
+## 📦 Creating a Standalone `.exe` (No Python Required)
+
+If you want to distribute without requiring Python or pycryptodome:
 
 ```bash
-python light_ObfuXtreme.py your_script.py
-```
-
----
-
-### ⚙️ Need .exe File ?
-
-Just use this command after Obfuscation, it will compile it to .exe file.
-
-first install:
-```
 pip install pyinstaller
-```
-then use this command:
-```
 pyinstaller --onefile --noconsole obfuscated.py
 ```
-Optional: If you're making a simple tool, PyInstaller is fine. If you need actual security, Cython + obfuscation is a practical approach. Going beyond that (VMProtect, Themida) is only worth it for high-risk software. 
 
-### 🛠️ Development Roadmap
+This bundles:
 
-* [ ] Machine-bound execution module (“run only on this PC”)
-* [ ] Obfuscated password-protected decryption
-* [ ] Auto .exe generation after obfuscation
-* [ ] Junk code generation levels (Low/Medium/Hard/Extreme)
-* [ ] Add optional metamorphic transformations
+* Python runtime
+* Crypto dependencies
+* Obfuscated payload
 
 ---
 
-<h4 align="center">If this project helps you, please give it a ⭐ — it motivates future improvements!</h4>
+## 🧪 VirusTotal Demonstration (Educational)
+
+<p align="center">
+<strong>Without ObfuXtreme</strong><br>
+<img width="90%" src="https://github.com/spyboy-productions/ObfuXtreme/blob/main/Image/without_ObfuXtreme.png" />
+</p>
+
+<p align="center">
+<strong>With ObfuXtreme</strong><br>
+<img width="90%" src="https://github.com/spyboy-productions/ObfuXtreme/blob/main/Image/with_ObfuXtreme.png" />
+</p>
+
+These results demonstrate **structural obfuscation effectiveness** for research and analysis only.
+
+---
+
+## 🛠️ Roadmap
+
+* [ ] Optional metamorphic transformations
+* [ ] Junk code intensity levels
+* [ ] Machine-bound execution
+* [ ] Password-protected loader
+* [ ] Optional marshal-free mode
+* [ ] CI multi-Python build support
+
+---
+
+<h4 align="center">If this project helps you, please give it a ⭐ — it directly supports further development.</h4>
