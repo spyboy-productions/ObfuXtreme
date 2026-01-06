@@ -173,6 +173,8 @@ Because obfuscation and packaging are two different steps:
 
 ```
 ObfuXtreme outputs Python code
+The obfuscated .py file is cross-platform
+It still requires Python + pycryptodome
 PyInstaller produces native binaries
 Native binaries are OS-specific
 Obfuscation ≠ packaging
