@@ -148,6 +148,22 @@ python obfuscated.py
 
 ---
 
+## 🧪 VirusTotal Demonstration (Educational)
+
+<p align="center">
+<strong>Without ObfuXtreme</strong><br>
+<img width="90%" src="https://github.com/spyboy-productions/ObfuXtreme/blob/main/Image/without_ObfuXtreme.png" />
+</p>
+
+<p align="center">
+<strong>With ObfuXtreme</strong><br>
+<img width="90%" src="https://github.com/spyboy-productions/ObfuXtreme/blob/main/Image/with_ObfuXtreme.png" />
+</p>
+
+These results demonstrate **structural obfuscation effectiveness** for research and analysis only.
+
+---
+
 ## 📦 Creating a Standalone `.exe` (No Python Required)
 
 If you want to distribute without requiring Python or pycryptodome:
@@ -184,28 +200,10 @@ Obfuscation ≠ packaging
   <img width="90%" alt="Diagram" src="https://github.com/user-attachments/assets/a8ebc30f-15a5-4cc4-8b01-be013ac42229" />
 </p>
 
-### Final summary
-
 * ✔ ObfuXtreme can be run on **any OS**
 * ✔ The obfuscated `.py` file is **portable**
 * ✔ **PyInstaller must run on macOS** to produce macOS binaries
 * ✔ This is standard behavior for all Python packagers (PyInstaller, Nuitka, etc.)
-
----
-
-## 🧪 VirusTotal Demonstration (Educational)
-
-<p align="center">
-<strong>Without ObfuXtreme</strong><br>
-<img width="90%" src="https://github.com/spyboy-productions/ObfuXtreme/blob/main/Image/without_ObfuXtreme.png" />
-</p>
-
-<p align="center">
-<strong>With ObfuXtreme</strong><br>
-<img width="90%" src="https://github.com/spyboy-productions/ObfuXtreme/blob/main/Image/with_ObfuXtreme.png" />
-</p>
-
-These results demonstrate **structural obfuscation effectiveness** for research and analysis only.
 
 ---
 
