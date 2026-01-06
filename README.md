@@ -165,12 +165,6 @@ This bundles:
 
 ---
 
-Here’s a **clean, README-ready version** with better flow and wording. I’ve kept it concise, factual, and non-AI-ish, and adjusted formatting so it reads naturally in a GitHub README.
-
-You can paste this directly.
-
----
-
 ## Common misunderstanding (important)
 
 **“ObfuXtreme already obfuscates the code, so why does the OS matter?”**
